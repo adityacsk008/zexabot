@@ -1,0 +1,43 @@
+
+I want to create a chatbot website that uses the Google Gemini API. The website should have a dark, modern, and futuristic design, inspired by the following theme:
+
+Background Color: #0B0C10 (very dark blue-black)
+
+Primary Accent Color: #66FCF1 (bright aqua glow)
+
+Secondary Accent Color: #45A29E (greenish-teal)
+
+Text Color: #C5C6C7 (light gray)
+
+Font: 'Inter', system-ui, sans-serif
+
+Animations: subtle glowing effects on buttons, cards, text headings
+
+Glow animations similar to 'subtleGlow', 'textGlow', and 'borderGlow'
+
+Smooth scrolling and responsive layout for mobile and desktop
+
+Modern shadows and blurred background effects (like glassmorphism)
+
+Light and Dark mode toggle (optional but preferred)
+
+Website Functionality Requirements:
+A clean and smooth chat interface for conversations
+Typing animation while the AI generates responses
+Save chat history locally (localStorage or IndexedDB)
+Secure handling of Gemini API keys (hide them securely)
+Sticky Header and Sidebar Navigation (optional)
+
+Additional Requirements:
+Typing effect for user and AI messages
+Responsive mobile view and desktop optimization
+Smooth hover transitions on buttons and input fields
+
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDM-EDCbw2axD0KS-daOMTIyIyn71XTtJo" \
+-H 'Content-Type: application/json' \
+-X POST \
+-d '{
+  "contents": [{
+    "parts":[{"text": "Explain how AI works"}]
+    }]
+   }'
