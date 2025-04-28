@@ -1,0 +1,113 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@layer base {
+  :root {
+    --background: 224 97% 3%;
+    --foreground: 220 10% 98%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --primary: 174 100% 70%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 173 38% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 174 100% 70%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 174 100% 70%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-promptminds-background text-promptminds-text font-sans antialiased;
+  }
+  
+  .glassmorphism {
+    @apply bg-black/30 backdrop-blur-md border border-promptminds-primary/20 shadow-lg;
+  }
+}
+
+@layer components {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(102, 252, 241, 0.7);
+  }
+  
+  .neon-border {
+    @apply border border-promptminds-primary shadow-[0_0_10px_rgba(102,252,241,0.5)];
+  }
+  
+  .chat-container {
+    @apply flex flex-col h-[calc(100vh-8rem)];
+  }
+  
+  .chat-messages {
+    @apply flex-1 overflow-y-auto p-4 space-y-4;
+  }
+  
+  .typing-indicator::after {
+    content: '';
+    @apply inline-block w-1 h-4 ml-1 bg-promptminds-primary animate-blink;
+  }
+  
+  .message {
+    @apply p-3 rounded-lg max-w-[80%];
+  }
+  
+  .user-message {
+    @apply bg-promptminds-secondary/30 ml-auto;
+  }
+  
+  .ai-message {
+    @apply bg-muted mr-auto border-l-2 border-promptminds-primary;
+  }
+  
+  .chat-input {
+    @apply bg-muted/70 border border-promptminds-primary/30 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-promptminds-primary/50 transition-all;
+  }
+  
+  .glowing-btn {
+    @apply bg-promptminds-primary/80 hover:bg-promptminds-primary text-black font-medium px-4 py-2 rounded-md transition-all duration-300 animate-subtle-glow;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center gap-2 p-2 rounded-md hover:bg-promptminds-primary/10 transition-all duration-200 text-promptminds-text;
+  }
+  
+  .sidebar-link.active {
+    @apply bg-promptminds-primary/20 text-promptminds-primary;
+  }
+  
+  .logo-text {
+    @apply font-bold text-xl md:text-2xl text-promptminds-primary animate-text-glow;
+  }
+}
